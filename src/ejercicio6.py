@@ -34,28 +34,40 @@ def codificacion_numeracion(texto, desplazamiento):
     numero_de_texto = len(texto) -1 #El numero de caracteres del texto.
     
     lista = conversor_caracteres_numeros(cifrado) #La lista del cifrado en numeros.
-    lista_de_numeros_de_caracteres = lista #Guarda la lista de numeros identica a la del cifrado.
+    lista_de_numeros_de_caracteres_cifrado = lista #Guarda la lista de numeros identica a la del cifrado.
     
     lista = conversor_caracteres_numeros(texto)
-    lista_de_numeors_de_textos = lista #Guarda una lista con una cantidad de numeros igual al texto ingresado.
+    lista_de_numeoros_de_textos = lista #Guarda una lista con una cantidad de numeros igual al texto ingresado.
    
-    nuevo_orden = []
-    orden_final = []
+    nuevo_orden = [] #Guarda la transformación del texto a el numero de acuerdo a la pocicion de la letra en el cifrado.
+    orden_medio = [] #Convertido a numero después de que se le sume el desplamamiento.
+    orden_final = [] #Convertido en letra nuevamente.
     contador = 0
     contador_cifrado = 0
-    while contador <= numero_de_texto:
+    """
+    Esta parte de a continuación lo transforma a numero.
+    """
+    while contador <= numero_de_texto: #Mientras la cantidad de caracteres que tiene el texto no se termine de pasar esto sigue.
         if texto[contador] == cifrado[contador_cifrado]:
-            comparacion = lista_de_numeros[contador_cifrado]
+            comparacion = lista_de_numeros_de_caracteres_cifrado[contador_cifrado]
             caracter_convertido_numero = comparacion
             nuevo_orden.append(caracter_convertido_numero)
             contador = contador + 1
             contador_cifrado = 0
         else:
-            contador_cifrado = contador_cifrado + 1    
-    contador_suma = 0
-    while contador_suma >= numero_de_texto:
-        nuevo_orden[contador_suma] = nuevo_orden[contador_suma] +(desplazamiento)
+            contador_cifrado = contador_cifrado + 1 #Esto desplaza el numero del cifrado al siguiente caracter. 
+    """
+    La parte que sigue aumenta el numero de la lista de acuerdo para donde se lo quiera desplazar.
+    """
+    contador_suma = 0 #Otro contador para que pase todo el texto.
+    while contador_suma <= numero_de_texto:
+        nuevo_orden[contador_suma] = mover
+        Mover = mover + (desplazamiento)
+        orden_medio.append(mover)
         contador_suma = contador_suma + 1
+    """
+    Esta parte vuelve a transformarlo en texto de acuerdo al cifrado.
+    """
     contador_cambio = 0
     contador_cambio_cifrado = 0
     while contador_cambio >= numero_de_texto:
