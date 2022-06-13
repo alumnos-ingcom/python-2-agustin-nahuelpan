@@ -37,7 +37,7 @@ def codificacion_numeracion(texto, desplazamiento):
     lista_de_numeros_de_caracteres_cifrado = lista #Guarda la lista de numeros identica a la del cifrado.
     
     lista = conversor_caracteres_numeros(texto)
-    lista_de_numeoros_de_textos = lista #Guarda una lista con una cantidad de numeros igual al texto ingresado.
+    lista_de_numeros_de_textos = lista #Guarda una lista con una cantidad de numeros igual al texto ingresado.
    
     nuevo_orden = [] #Guarda la transformación del texto a el numero de acuerdo a la pocicion de la letra en el cifrado.
     orden_medio = [] #Convertido a numero después de que se le sume el desplamamiento.
@@ -62,7 +62,7 @@ def codificacion_numeracion(texto, desplazamiento):
     contador_suma = 0 #Otro contador para que pase todo el texto.
     while contador_suma <= numero_de_texto:
         nuevo_orden[contador_suma] = mover
-        Mover = mover + (desplazamiento)
+        mover = mover + (desplazamiento)
         orden_medio.append(mover)
         contador_suma = contador_suma + 1
     """
@@ -70,14 +70,22 @@ def codificacion_numeracion(texto, desplazamiento):
     """
     contador_cambio = 0
     contador_cambio_cifrado = 0
-    while contador_cambio >= numero_de_texto:
-        numero_final = nuevo_orden[contador_cambio]
-        if numero_final > numero_de_cifrado:
-            numero_final = (numero_final - numero_de_cifrado) - 1
-        elif numero_final < numero_de_cifrado:
-            numero_final = (numero_final + numero_de_cifrado) + 1
-        
-        if numero_final == lista_de_numeros[contador_cambio_cifrado]:
+    while contador_cambio <= numero_de_texto:
+        numero_final = orden_medio[contador_cambio]
+        """
+        En lo que sigue revisa si el numero final resulta ser mas grande que el numero
+        total del cifrado. En caso de serlo, le resta el numero total.
+        """
+        while numero_final > numero_de_cifrado or numero_final < numero_de_cifrado:
+            if numero_final > numero_de_cifrado:
+                numero_final = numero_final - numero_de_cifrado
+                numero_final = numero_final - 1
+            elif numero_final < numero_de_cifrado:
+                numero_final = (numero_final + numero_de_cifrado)
+                numero_final = numero_final - 1
+                
+        comparacion = lista_de_caracteres_de_numeros_cifrados[contador_cambio_cifrado]        
+        if numero_final == comparacion:
             orden = cifrado[contador_cambio_cifrado]
             orden_final.append(orden)
             contador_cambio = contador_cambio + 1
