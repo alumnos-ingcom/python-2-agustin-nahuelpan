@@ -49,15 +49,33 @@ def corchetes_balanceados(cadena_armada, segundo, primero):
         contador = contador + 1
     if primera_suma != segunda_suma: #Si no los tiene ya se que es falsa.
         resultado = False
-    else: #Si los tiene necesito más pruebas.
-        
-        
-        
-        
-        
+    elif primera_suma == 0 and segunda_suma == 0:
+        resultado = True
+    else: #Si los tiene necesito más pruebas. Dios mio.
+        contador_dos = 0 #Vuelvo a revisar la lista.
+        while contador_dos <= numero_caracteres:
+            comparacion = cadena_armada[contador_dos] 
+            if comparacion == segundo: #Revisa si el corchete de cierre aparece.
+                cadena_armada[contador_dos] = " " 
+                contador_tres = contador_dos - 1 #un contador en el mismo punto que empieza a revisar.
+                while contador_tres < contador_dos:
+                    comparacion_dos = cadena_armada[contador_tres]
+                    if comparacion_dos == primero: #Revisa si aparece el caracter que la abre.
+                        cadena_armada[contador_tres] = " " #Elimina ese numero.
+                        contador_dos = contador_dos + 1
+                        if contador_dos == numero_caracteres: #Si el contador esta en cero significaria que la cadena esta bien.
+                            resultado = True
+                        contador_tres = contador_dos + 2
+                    contador_tres  = contador_tres - 1
+                    if contador_tres < 0:
+                        contador_tres = contador_dos + 1
+                        contador_dos = numero_caracteres + 1
+                        resultado = False
+            contador_dos = contador_dos + 1
     return resultado
     
     pass
+
 
 def armar_cadena(cadena):
     """
