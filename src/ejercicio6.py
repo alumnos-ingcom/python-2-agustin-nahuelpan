@@ -19,9 +19,6 @@ el alfabeto con 13 posiciones, resultando en A->N, B->O... Y->L y Z->M.
 * Implementar una funcion que codifique un texto rotandolo 
 una cantidad de posiciones ajustable.
 
-* Implementar la funcion que decodifique el texto rotado una 
-cantidad de posiciones ajustable.
-
 Una buena forma para verificar este ejercicio es codificar y 
 decodificar un texto y compararlo con lo que fué ingresado originalmente.
 

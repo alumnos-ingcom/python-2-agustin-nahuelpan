@@ -62,11 +62,7 @@ def corchetes_balanceados(cadena_armada, segundo, primero):
                     comparacion_dos = cadena_armada[contador_tres]
                     if comparacion_dos == primero: #Revisa si aparece el caracter que la abre.
                         cadena_armada[contador_tres] = " " #Elimina ese numero.
-                        #contador_dos = contador_dos + 1
-                        #if contador_dos == numero_caracteres: #Si el contador esta en cero significaria que la cadena esta bien.
-                        #    resultado = True
                         contador_tres = 10000000#contador_dos + 2 #Un numero que se que debe ser más grande.
-                    #contador_tres  = contador_tres - 1
                     elif contador_tres < 0:
                         contador_tres = contador_dos + 1
                         contador_dos = numero_caracteres + 1
@@ -84,7 +80,6 @@ def armar_cadena(cadena):
     """
     Pide y arma una cadena con los caracteres pedidos.
     """
-    #cadena = input("Ingrese una linea o cadena de texto para analizar.")
     cantidad = len(cadena) -1
     numero = 0
     cadena_armada = []
@@ -121,7 +116,7 @@ if __name__ == "__main__":
     principal()
 
 if __name__ == "__main__":
-    armar_cadena(cadena)
+    armar_cadena()
     
 if __name__ == "__main__":
-    corchetes_balanceados(cadena_armada, segundo, primero)
+    corchetes_balanceados()

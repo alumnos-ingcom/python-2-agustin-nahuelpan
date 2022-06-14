@@ -21,6 +21,9 @@ Indicar en lugar de la cantidad de caracteres superpuestos, la posicion
 de inicio de la superposición."""
 
 def superposicion(uno, dos):
+    """
+    La función indica el lugar exacto en donde se superponen con un 1, y el lugar exacto en donde no se superponen con un 0.
+    """
     lista_uno = len(uno) -1
     lista_dos = len(dos) -1
     fallos = []
@@ -50,6 +53,9 @@ def superposicion(uno, dos):
     pass
 
 def superposicion_lugar(uno, dos):
+    """
+    La función avisa a partir de que caracter se empiezan a superponer los caracteres.
+    """
     lista_uno = len(uno) -1
     lista_dos = len(dos) -1
     contador = 0
@@ -71,6 +77,9 @@ def superposicion_lugar(uno, dos):
     pass
 
 def superposicion_cantidad(uno, dos):
+    """
+    La función revisa la cantidad de caracteres superpuestos.
+    """
     lista_uno = len(uno) -1
     lista_dos = len(dos) -1
     fallos = []
