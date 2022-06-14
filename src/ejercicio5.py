@@ -57,20 +57,23 @@ def corchetes_balanceados(cadena_armada, segundo, primero):
             comparacion = cadena_armada[contador_dos] 
             if comparacion == segundo: #Revisa si el corchete de cierre aparece.
                 cadena_armada[contador_dos] = " " 
-                contador_tres = contador_dos - 1 #un contador en el mismo punto que empieza a revisar.
-                while contador_tres < contador_dos:
+                contador_tres = contador_dos #- 1 #un contador en el mismo punto que empieza a revisar.
+                while contador_tres <= contador_dos:
                     comparacion_dos = cadena_armada[contador_tres]
                     if comparacion_dos == primero: #Revisa si aparece el caracter que la abre.
                         cadena_armada[contador_tres] = " " #Elimina ese numero.
-                        contador_dos = contador_dos + 1
-                        if contador_dos == numero_caracteres: #Si el contador esta en cero significaria que la cadena esta bien.
-                            resultado = True
-                        contador_tres = contador_dos + 2
-                    contador_tres  = contador_tres - 1
-                    if contador_tres < 0:
+                        #contador_dos = contador_dos + 1
+                        #if contador_dos == numero_caracteres: #Si el contador esta en cero significaria que la cadena esta bien.
+                        #    resultado = True
+                        contador_tres = 10000000#contador_dos + 2 #Un numero que se que debe ser más grande.
+                    #contador_tres  = contador_tres - 1
+                    elif contador_tres < 0:
                         contador_tres = contador_dos + 1
                         contador_dos = numero_caracteres + 1
                         resultado = False
+                    contador_tres = contador_tres + 1
+            elif contador_dos == numero_caracteres:
+                resultado = True
             contador_dos = contador_dos + 1
     return resultado
     
