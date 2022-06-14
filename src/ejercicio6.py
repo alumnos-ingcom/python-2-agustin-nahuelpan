@@ -99,8 +99,9 @@ def codificacion_numeracion(texto, desplazamiento):
                 
         comparacion = lista_de_numeros_de_caracteres_cifrado[contador_cambio_cifrado]        
         if numero_final == comparacion:
-            numero_final = chr(numero_final)
-            orden_final = orden_final + numero_final
+            numero_computadora = numero_conversion_computadora_cifrado[contador_cambio_cifrado]
+            numero_computadora = chr(numero_computadora)
+            orden_final = orden_final + numero_computadora
             contador_cambio = contador_cambio + 1
             contador_cambio_cifrado = 0
         else:
