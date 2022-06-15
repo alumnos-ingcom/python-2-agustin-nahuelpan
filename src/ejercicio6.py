@@ -27,7 +27,7 @@ decodificar un texto y compararlo con lo que fué ingresado originalmente.
 
 #####
 def codificacion_numeracion(texto, desplazamiento):
-    cifrado = (" ", ".", ",",":","a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "ñ", "o", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "Ñ", "O", "P", "Q", "R", "S", "T", "V", "W", "X", "Y", "Z")
+    cifrado = (" ", ".", ",",":","a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "ñ", "o", "p", "q", "r", "s", "t", "u","v", "w", "x", "y", "z", "á", "é", "í", "ó", "ú","0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "Ñ", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "Á", "É", "Í", "Ó","Ú")
     numero_de_cifrado = len(cifrado) -1 #El numero de caracteres del cifrado.
     numero_de_texto = len(texto) -1 #El numero de caracteres del texto.
     
@@ -41,7 +41,6 @@ def codificacion_numeracion(texto, desplazamiento):
     
     lista = conversor_caracteres_numeros(texto)
     lista_de_numeros_de_textos = lista #Guarda una lista con una cantidad de numeros igual al texto ingresado.
-    ##Creo que esta es al pedo. Ya veré.
     texto_a_convertir = texto
     convertido = conversor_numeros_computadora(texto_a_convertir)
     lista_de_numeros_caracteres_texto = convertido #Los caracteres del texto ingresado convertidos a su version numerica del sistema.
@@ -70,7 +69,6 @@ def codificacion_numeracion(texto, desplazamiento):
     desplazar en lo que respecta a la pocicion del cifrado.
     """
     contador_suma = 0 #Otro contador para que pase todo el texto.
-    print(f"{nuevo_orden}")
     while contador_suma <= numero_de_texto:
         mover = nuevo_orden[contador_suma]
         mover = mover + (desplazamiento)
@@ -82,7 +80,6 @@ def codificacion_numeracion(texto, desplazamiento):
     """
     contador_cambio = 0
     contador_cambio_cifrado = 0
-    print (f"{orden_medio}")
     while contador_cambio <= numero_de_texto:
         numero_final = orden_medio[contador_cambio]
         """
@@ -123,7 +120,6 @@ def conversor_caracteres_numeros(lista):
         numero = contador
         lista_de_numeros.append(numero)
         contador = contador + 1
-    print (f"{lista_de_numeros}")
     return lista_de_numeros    
     
     pass
@@ -140,29 +136,10 @@ def conversor_numeros_computadora(texto_a_convertir):
         invocacion = ord(invocacion)
         convertido.append(invocacion)
         contador = contador + 1
-    print (f"{convertido}")
     return convertido
 
     pass
 
-
-#def codificacion_numeracion(texto, desplazamiento):
-#    numero_letras_texto = len(texto) -1
-#    #orden_final = []
-#    contador = 0
-#    orden_final = ""
-#    while contador <= numero_letras:
-#        invocacion = texto[contador]
-#        numero = ord(invocacion) #Transforma la letra en numero
-#        numero = numero + desplazamiento #Le suma el numero de desplazamiento.
-#        numero = chr(numero)
-#        orden_final = orden_final + numero
-        #orden_final.append(numero)
-#        contador = contador + 1
-#    print (F"Y asi queda: {orden_final}")
-#    return orden_final
-
-#    pass    
 
 def principal():
     """
